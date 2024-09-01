@@ -6,7 +6,7 @@ import YardIcon from '@mui/icons-material/Yard'; // This assumes you're using an
 
 // this is card component with specific styling
 const StyledCard = styled(Card)(({ theme }) => ({
-    backgroundColor: '#f2cbbb', // Light blue background
+    backgroundColor: '#D39A5B', // Light blue background
     borderRadius: '16px', // Rounded corners
     textAlign: 'center', // Center text
 }));
@@ -27,17 +27,15 @@ const PlantCard = (props) => {
     return (
         <StyledCard>
             <CardContent>
-                <IconCircle>
-                    <YardIcon fontSize="large" style={{ color: '#80A290' }} />
-                </IconCircle>
-                <Typography variant="h4" component="div" style={{ color: '#80A290', marginTop: '16px' }}>
+                <YardIcon fontSize="large" style={{ color: '#283618' }} />
+                <Typography variant="h4" component="div" style={{ color: '#7B410E', marginTop: '16px' }}>
                     45%
                     {/* {props.moisturePct}%*/}
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="#283618">
                     Moitsure level
                 </Typography>
-                <Typography variant="body2" color="textSecondary">
+                <Typography variant="body2" color="#283618">
                     {props.plantName}
                 </Typography>
             </CardContent>

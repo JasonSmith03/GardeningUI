@@ -1,12 +1,10 @@
 import { Box, CardContent, CardMedia, Container, CssBaseline, Grid, IconButton, Paper, Typography, Modal } from "@mui/material";
 import { useState } from "react";
 import AddIcon from '@mui/icons-material/Add';
-import PlantCard from "../components/PlantCard";
 import WeatherCard from "../components/WeatherCard";
 import PlantRegisterForm from "./PlantRegisterForm";
 import { React } from 'react'
 import TaskList from "../components/TaskList";
-import postPlantData from '../services/gardenPOSTApi';
 import DashPlantGrid from "../components/DashPlantGrid";
 
 function Dashboard() {
@@ -34,14 +32,14 @@ function Dashboard() {
     return (
     <>
         <CssBaseline />
-        <Container xs={12} sm={6} md={4} sx={{ background: '#8DA290', padding: '16px', marginTop: '32px'}}> 
+        <Container xs={12} sm={6} md={4} sx={{ background: '#616b3e', padding: '16px', marginTop: '32px'}}> 
             <Box paddingTop={10} display={'flex'} flexDirection={'row'}>
 
                 <DashPlantGrid />
 
-                <Box paddingTop={7}>
-                    <IconButton aria-label="add-plant" size="large" sx={{background:'white', padding:'16px'}} onClick={handleOpenModal} >
-                        <AddIcon fontSize="large" />
+                <Box paddingTop={7} paddingLeft={7}>
+                    <IconButton aria-label="add-plant" size="large" sx={{ background: '#616b3e', padding:'16px'}} onClick={handleOpenModal} >
+                        <AddIcon fontSize="large" sx={{ color: "#FEFAE0"}} />
                     </IconButton>
                     <Modal 
                         open={showPlantRegComp}
@@ -55,9 +53,6 @@ function Dashboard() {
                     </Modal>
                 </Box>
             </Box>
-
-
-
             <Box display={"flex"} sx={{ paddingTop:'16px'}}>
                 {/* weather widget */}
                 <Box>

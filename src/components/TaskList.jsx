@@ -1,12 +1,11 @@
 // ScrollableList.jsx
 import React from 'react';
 import { Box, Paper, Card, List, ListItem, ListItemText, ListItemSecondaryAction } from '@mui/material';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import { styled } from '@mui/system';
 
 // this is card component with specific styling
 const StyledCard = styled(Card)(({ theme }) => ({
-    backgroundColor: '#e0f7fa', // Light blue background
     borderRadius: '16px', // Rounded corners
     textAlign: 'center', // Center text
 }));
@@ -31,15 +30,15 @@ const TaskList = () => {
                     maxHeight: 450,
                     overflow: 'auto',
                     padding: 2,
-                    backgroundColor: '#DEE2D9',
+                    backgroundColor: '#FEFAE0',
                 }}
             >
                 <List>
                     {items.map((item, index) => (
-                        <ListItem key={index} component={Paper} sx={{ marginBottom: 1, padding: 2, background: '#FCF1D8'}}>
-                            <ListItemText primary={item} />
+                        <ListItem key={index} component={Paper} sx={{ marginBottom: 1, padding: 2, background: '#EAC594 '}}>
+                            <ListItemText primary={item} sx={{ color: '#7B410E' }} />
                             <ListItemSecondaryAction>
-                                <CheckCircleIcon color="#D5E7B8" />
+                                <CheckBoxOutlineBlankIcon sx={{ color: '#7B410E' }}/>
                             </ListItemSecondaryAction>
                         </ListItem>
                     ))}
