@@ -26,7 +26,7 @@ const DashPlantGrid = () => {
                     plants?.map(
                         (plant) => 
                             <Grid item key={plant.plants_id} xs={12} sm={6} md={3}> 
-                                <PlantCard plantName={plant.plants_name} plantSpecies={plant.plants_species} />
+                                <PlantCard plantName={plant.plants_name} plantSpecies={plant.plants_species} moisturePct={plant.moistureValue} />
                             </Grid>
                     )
                 }

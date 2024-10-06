@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/system";
 import fetchWeatherData from "../services/openWeatherApi";
+import WeatherIcon from './WeatherIcon';
 
 // this is a card component with specific styling
 const StyledCard = styled(Card)(({ theme }) => ({
@@ -82,7 +83,7 @@ const WeatherCard = () => {
         component="img"
         height="200"
         width="200"
-        image={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
+        image={WeatherIcon({ weather })}
         alt="Weather icon"
       />
       <CardContent>

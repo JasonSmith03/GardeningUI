@@ -56,7 +56,7 @@ function Dashboard() {
             <Box display={"flex"} sx={{ paddingTop:'16px'}}>
                 {/* weather widget */}
                 <Box>
-                    {/* <WeatherCard /> */}
+                    <WeatherCard />
                 </Box>
 
                 {/* tasks to take care of plant */}

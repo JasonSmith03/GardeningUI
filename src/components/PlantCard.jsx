@@ -1,39 +1,48 @@
 // Plant.jsx
 import React from 'react';
-import { Card, CardContent, Typography, Box } from '@mui/material';
+import { Card, CardContent, Typography } from '@mui/material';
 import { styled } from '@mui/system';
-import YardIcon from '@mui/icons-material/Yard'; // This assumes you're using an Android icon. Adjust as necessary.
+import YardIcon from '@mui/icons-material/Yard'; 
 
-// this is card component with specific styling
-const StyledCard = styled(Card)(({ theme }) => ({
-    backgroundColor: '#D39A5B', // Light blue background
+// Define color mapping based on moisture levels
+const colorMapping = {
+    high: '#FEFAE0',    // 60%-100%
+    mediumHigh: '#FFE4C5', // 40%-59%
+    mediumLow: '#F1C696',  // 20%-39%
+    low: '#DDA15E'       // 0%-19%
+};
+
+// Styled card component
+const StyledCard = styled(Card)(({ theme, bgColor }) => ({
+    backgroundColor: bgColor, // Use bgColor instead of backgroundColor
     borderRadius: '16px', // Rounded corners
     textAlign: 'center', // Center text
 }));
 
-// this is a box element holding the circle icon and styling it
-const IconCircle = styled(Box)(({ theme }) => ({
-    display: 'inline-flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '60px',
-    height: '60px',
-    borderRadius: '50%',
-    background: 'linear-gradient(to bottom, #DEE2D9, #BEC7B4)', // Gradient background
-    margin: '0 auto', // Center horizontally
-}));
-
 const PlantCard = (props) => {
+    // Determine the background color based on moisture percentage
+    let bgColor; // Use bgColor instead of backgroundColor
+    const moisturePct = props.moisturePct;
+
+    if (moisturePct >= 60) {
+        bgColor = colorMapping.high;       // 60% - 100%
+    } else if (moisturePct >= 40) {
+        bgColor = colorMapping.mediumHigh; // 40% - 59%
+    } else if (moisturePct >= 20) {
+        bgColor = colorMapping.mediumLow;  // 20% - 39%
+    } else {
+        bgColor = colorMapping.low;        // 0% - 19%
+    }
+
     return (
-        <StyledCard>
+        <StyledCard bgColor={bgColor}>
             <CardContent>
                 <YardIcon fontSize="large" style={{ color: '#283618' }} />
                 <Typography variant="h4" component="div" style={{ color: '#7B410E', marginTop: '16px' }}>
-                    45%
-                    {/* {props.moisturePct}%*/}
+                    {moisturePct}%
                 </Typography>
                 <Typography variant="body2" color="#283618">
-                    Moitsure level
+                    Moisture level
                 </Typography>
                 <Typography variant="body2" color="#283618">
                     {props.plantName}
