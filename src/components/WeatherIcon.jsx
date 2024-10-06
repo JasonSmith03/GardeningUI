@@ -1,4 +1,3 @@
-import React from 'react';
 import sunnyIcon from '../assets/01d.png';
 import moonIcon from '../assets/01n.png';
 import fewCloudDayIcon from '../assets/02d.png';

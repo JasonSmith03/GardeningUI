@@ -21,11 +21,11 @@ const DashPlantGrid = () => {
     return (
         <>
         {/* the first grid tag is for the container which works off of a 12 col system */}
-            <Grid container sx={{ flexGrow: 1}} justifyContent={'space-between'}>
+            <Grid container sx={{ flexGrow: 1}} spacing={5}>
                 {
                     plants?.map(
                         (plant) => 
-                            <Grid item key={plant.plants_id} xs={12} sm={6} md={3}> 
+                            <Grid item key={plant.plants_id} xs={12} sm={6} md={3} > 
                                 <PlantCard plantName={plant.plants_name} plantSpecies={plant.plants_species} moisturePct={plant.moistureValue} />
                             </Grid>
                     )

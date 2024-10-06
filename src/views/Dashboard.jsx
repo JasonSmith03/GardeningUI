@@ -1,4 +1,4 @@
-import { Box, CardContent, CardMedia, Container, CssBaseline, Grid, IconButton, Paper, Typography, Modal } from "@mui/material";
+import { Box, Container, CssBaseline, IconButton, Typography, Modal } from "@mui/material";
 import { useState } from "react";
 import AddIcon from '@mui/icons-material/Add';
 import WeatherCard from "../components/WeatherCard";
@@ -11,7 +11,6 @@ function Dashboard() {
 
     //setting the state to show the plant registration form 
     const [showPlantRegComp, setPlantRegComp] = useState(false);
-    const [getPlants, setPlants] = useState([]);
 
     const style = {
         position: 'absolute',
